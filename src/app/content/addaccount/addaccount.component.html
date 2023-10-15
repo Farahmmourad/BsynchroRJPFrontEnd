@@ -1,0 +1,15 @@
+<body>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="customerId">Customer ID:</label>
+          <input type="number" id="customerId" name="customerId" [(ngModel)]="customerId" required>
+        </div>
+      
+        <div class="form-group">
+          <label for="initialCredit">Initial Credit:</label>
+          <input type="number" id="initialCredit" name="initialCredit" [(ngModel)]="initialCredit" required>
+        </div>
+      
+        <button type="submit" class="button">Submit</button>
+      </form>
+</body>

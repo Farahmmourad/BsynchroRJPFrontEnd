@@ -1,0 +1,29 @@
+<body>
+    <div class="customer-details">
+        <h1>Customer Details</h1>
+        <p>Customer: {{ customer.firstName }} {{ customer.lastName }}</p>
+        <p>Blanace: {{customer.balance}}</p>
+        <p>Accounts:</p>
+        <ul id="accountList">
+          <li *ngFor="let account of customer.accounts">
+            {{ account.accountId }}
+            <ul>
+              <li>Balance: {{ account.balance }}</li>
+              <li>Transactions:
+                <ul class="transactionList">
+                  <li *ngFor="let transaction of account.transactions">
+                    Transaction: {{ transaction.transactionId }}
+                    <ul>
+                        <li>Amount: {{transaction.amount}}</li>
+                        <li>Type: {{transaction.type}}</li>
+                        <li>Status: {{transaction.status}}</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <button class="add-account-button" (click)="onSubmit()">Add Account</button>
+      </div>
+</body>
